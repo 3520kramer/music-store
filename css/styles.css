@@ -1,0 +1,47 @@
+@import "header.css";
+@import "footer.css";
+@import "tracks.css";
+
+:root{
+  /* Colors */
+  --color: #eeeeee;
+  
+  --colorTextPrimary: black;
+  --colorTextSecondary: darkgrey;
+
+  /* Paddings */
+  --paddingPrimary: 0.1rem 0.5rem;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+main{
+  padding: var(--paddingPrimary);
+}
+
+
+@media (min-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
