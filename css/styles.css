@@ -1,6 +1,8 @@
-@import "header.css";
+/* @import "header.css";
 @import "footer.css";
 @import "tracks.css";
+@import "one-track.css";
+@import "searchbar.css"; */
 
 :root{
   /* Colors */
@@ -11,7 +13,6 @@
 
   /* Paddings */
   --paddingPrimary: 0.1rem 0.5rem;
-
 }
 
 * {
