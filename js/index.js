@@ -1,4 +1,7 @@
-import { ROOT_URL } from "./common.js";
+import { ROOT_URL } from "./constants.js";
+
+// Compile multiple javascript files into one
+// This could be used: https://github.com/dfsq/compressJS.sh
 
 // For PROD:
 // By default, $.getScript() sets the cache setting to false. This appends a timestamped query parameter
@@ -16,8 +19,8 @@ $(document).ready(function () {
   // if prod, concat the files above and load that script from the HTML
 });
 
-// Alternative to jQuery $.getScript - as it's not possible to declare the script 
-// as a module. This makes it impossible to use import in scripts
+// Alternative to jQuery $.getScript - as it's not possible to declare the script
+// as a module - which makes it impossible to use import in scripts
 const loadScript = (filename) =>
   $(
     `<script src="${ROOT_URL}/js/${filename}.js" type="module" defer></script>`

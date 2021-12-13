@@ -15,16 +15,12 @@ include_once('views/header.php');
 
 switch ($url[1]) {
   case 'home':
-    // render_header_with_js('home.js');
     include_once('views/home.php');
     break;
   case 'tracks':
-    // render_header_with_js('tracks.js');
     include_once('views/tracks/tracks.php');
-    // include_once('views/tracks/one-track.php');
     break;
   case 'tracks/view':
-    // render_header_with_js('home.js');
     include_once('views/tracks/one-track.php');
     break;
   case 'artists':

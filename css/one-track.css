@@ -1,21 +1,19 @@
-#wrapper {
-  position: relative;
-  overflow: hidden;
+#view-track{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.slide-in-before{
-  position: absolute;
-  left: 100%;
-  transition: 0.2s;
-  background-color: white;
-  
+#track-album-img{
+  width: 80%;
 }
 
-.slide-in-after{
-  /* border: 1px solid black; */
-  /* display: block; */
-  transition: 0.2s;
-  left: 0;
+#view-track a{
+  text-decoration: none;
+  color: var(--colorTextPrimary);
 }
 
 dl {
@@ -48,7 +46,6 @@ dd {
   color: var(--colorTextPrimary);
   text-decoration: none;
   padding: 6px 0;
-
 }
 
 /* NOT POSSIBLE ON MOBILE*/
