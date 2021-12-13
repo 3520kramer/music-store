@@ -12,16 +12,16 @@ $.ajaxSetup({
 
 $(document).ready(function () {
   // if non-prod
-  loadScript("header");
-  loadScript("tracks");
-  loadScript("viewTrack");
+  loadScript("header/header.js");
+  loadScript("tracks/tracks.js");
+  loadScript("tracks/one-track/one-track.js");
 
   // if prod, concat the files above and load that script from the HTML
 });
 
 // Alternative to jQuery $.getScript - as it's not possible to declare the script
 // as a module - which makes it impossible to use import in scripts
-const loadScript = (filename) =>
+const loadScript = (filepath) =>
   $(
-    `<script src="${ROOT_URL}/js/${filename}.js" type="module" defer></script>`
+    `<script src="${ROOT_URL}/src/${filepath}" type="module" defer></script>`
   ).appendTo(document.head);
