@@ -15,6 +15,7 @@ $(document).ready(function () {
   loadScript("header/header.js");
   loadScript("tracks/tracks.js");
   loadScript("tracks/one-track/one-track.js");
+  loadScript("albums/one-album/one-album.js");
 
   // if prod, concat the files above and load that script from the HTML
 });
