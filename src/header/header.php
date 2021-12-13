@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/../utilities/constants.php' ?>
+<?php include_once __DIR__ . '/../../utilities/constants.php' ?>
 
 
 <!DOCTYPE html>

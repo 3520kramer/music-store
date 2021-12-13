@@ -1,5 +1,5 @@
-import { ROOT_URL } from "./constants.js";
-import { formatTime, formatSize } from "./common.js";
+import { ROOT_URL } from "../../../js/constants.js";
+import { formatTime, formatSize } from "../../../js/common.js";
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc19hZG1pbiI6ZmFsc2UsImZpcnN0X25hbWUiOiJMdVx1MDBlZHMiLCJsYXN0X25hbWUiOiJHb25cdTAwZTdhbHZlcyIsImV4cCI6MTYzOTgyMjU4OX0.f2Ci-5M5tYA4VWSq94kMc7LQBLlx2mnCbDNBNQyOnO8";
@@ -26,7 +26,10 @@ if (window.location.pathname === `${ROOT_URL}/tracks/view`) {
 }
 
 const insertTrackData = (track) => {
-  $("#track-album-img").attr({ src: track["imgUrl"], alt: `${track['albumName']} cover art` });
+  $("#track-album-img").attr({
+    src: track["imgUrl"],
+    alt: `${track["albumName"]} cover art`,
+  });
   $("#track-title").text(track["trackTitle"]);
 
   $("#track-artist").attr(
