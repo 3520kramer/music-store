@@ -10,7 +10,9 @@ $css = array(
     'header/searchbar.css',
     'footer/footer.css',
     'tracks/tracks.css',
-    'tracks/one-track/one-track.css'
+    'tracks/one-track/one-track.css',
+    'albums/one-album/one-album.css'
+
 );
 
 // Prevent a notice

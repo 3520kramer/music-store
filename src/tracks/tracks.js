@@ -1,31 +1,10 @@
-import { ROOT_URL } from "../../js/constants.js";
+import { ROOT_URL, IMG_NEXT_PATH} from "../../js/constants.js";
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc19hZG1pbiI6ZmFsc2UsImZpcnN0X25hbWUiOiJMdVx1MDBlZHMiLCJsYXN0X25hbWUiOiJHb25cdTAwZTdhbHZlcyIsImV4cCI6MTYzOTgyMjU4OX0.f2Ci-5M5tYA4VWSq94kMc7LQBLlx2mnCbDNBNQyOnO8";
 
 console.log(`${ROOT_URL}/tracks`);
 
-// if (window.location.pathname === `${ROOT_URL}/tracks`) {
-// $.ajax({
-//   url: "/exam/music-store-api/tracks",
-//   type: "GET",
-//   headers: { Authorization: "Bearer " + token },
-//   success: function (response) {
-//     console.log(response);
-//     const a = createArtistList();
-//     $(".artist-list").append(a);
-//   },
-// });
-// }
-
-// $(".track-list li").on("click", function (e) {
-//   e.preventDefault();
-//   console.log($(this).attr("id"));
-//   // $(".slide-in-before").css({ right: 0 });
-//   $(".slide-in-before").addClass("slide-in-after");
-
-//   location.href = `tracks/view?id=${$(this).attr("id")}`;
-// });
 const loading = $("#loading");
 const error = $("#error");
 const wrapper = $("#search-result-wrapper");
@@ -87,9 +66,6 @@ $(".search-form").submit(function (e) {
   });
 });
 
-const IMG_PLACEHOLDER_PATH = ROOT_URL + "/images/musical-note.png";
-const IMG_NEXT_PATH = "/images/next.png";
-
 const createArtistList = (artists) => {
   const section = $("<section />", { id: "artist-section" }).append(
     $("<h3 />", { text: "Artists" })
@@ -99,7 +75,7 @@ const createArtistList = (artists) => {
   artists.forEach((artist) => {
     const id = artist["id"];
     const listItem = $("<li />", { id: id }).appendTo(artistList);
-    const listAnchor = $("<a />", { href: `artists/view?id=${id}` }).appendTo(
+    const listAnchor = $("<a />", { href: `artists/view/${id}` }).appendTo(
       listItem
     );
 
@@ -132,7 +108,7 @@ const createTrackList = (tracks) => {
   tracks.forEach((track) => {
     const id = track["id"];
     const listItem = $("<li />", { id: id }).appendTo(trackList);
-    const listAnchor = $("<a />", { href: `tracks/view?id=${id}` }).appendTo(
+    const listAnchor = $("<a />", { href: `tracks/view/${id}` }).appendTo(
       listItem
     );
 
@@ -166,7 +142,7 @@ const createAlbumList = (albums) => {
   albums.forEach((album) => {
     const id = album["id"];
     const listItem = $("<li />", { id: id }).appendTo(trackList);
-    const listAnchor = $("<a />", { href: `albums/view?id=${id}` }).appendTo(
+    const listAnchor = $("<a />", { href: `albums/view/${id}` }).appendTo(
       listItem
     );
 
