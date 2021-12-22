@@ -27,6 +27,7 @@
       <li><a href="<?= ROOT_DIR . '/tracks' ?>">Tracks</a></li>
       <li><a href="<?= ROOT_DIR . '/artists' ?>">Artists</a></li>
       <li><a href="<?= ROOT_DIR . '/albums' ?>">Albums</a></li>
+      <li><a href="<?= ROOT_DIR . '/cart' ?>">View shopping cart</a></li>
       <li><a href="<?= ROOT_DIR . '/my-account' ?>">My account</a></li>
     </ul>
   </nav>

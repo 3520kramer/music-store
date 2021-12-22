@@ -1,5 +1,7 @@
-<?php include_once __DIR__ . '/../../../utilities/constants.php'; ?>
-
+<?php include_once __DIR__ . '/../../../utilities/constants.php'; 
+include_once __DIR__ . '/../../common/header/header.php';
+echo get_header('Album', 'albums/one-album/one-album.js');
+?>
 <div id="album-wrapper">
 <!-- TEMPLATE -->
 
@@ -24,7 +26,7 @@
 </div> 
 <!-- <section id="album-track-section"><h3>Tracks</h3><ul class="album-track-list"><li id="2461"><a href="tracks/view/2461"><p class="truncate-word">É Uma Partida De Futebol</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2462"><a href="tracks/view/2462"><p class="truncate-word">Eu Disse A Ela</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2463"><a href="tracks/view/2463"><p class="truncate-word">Zé Trindade</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2464"><a href="tracks/view/2464"><p class="truncate-word">Garota Nacional</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2465"><a href="tracks/view/2465"><p class="truncate-word">Tão Seu</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2466"><a href="tracks/view/2466"><p class="truncate-word">Sem Terra</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2467"><a href="tracks/view/2467"><p class="truncate-word">Os Exilados</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2468"><a href="tracks/view/2468"><p class="truncate-word">Um Dia Qualquer</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2469"><a href="tracks/view/2469"><p class="truncate-word">Los Pretos</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2470"><a href="tracks/view/2470"><p class="truncate-word">Sul Da América</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li><li id="2471"><a href="tracks/view/2471"><p class="truncate-word">Poconé</p><img src="/exam/music-store/images/next.png" alt="Show more"></a></li></ul></section> -->
 
-<a href="#" class="add-to-cart-button-mobile">
+<a href="#" class="button">
   <p>Add track to cart</p>
   <img src="<?= ROOT_DIR . '/images/add-to-cart.png' ?>" alt="add track to cart" width="25px" />
 </a>

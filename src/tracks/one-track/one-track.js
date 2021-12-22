@@ -1,30 +1,54 @@
-import { ROOT_URL } from "../../../js/constants.js";
-import { formatTime, formatSize, getUrlAndParam } from "../../../js/common.js";
+import { ROOT_URL, CART_SESSION_ROUTE } from "../../../js/constants.js";
+import {
+  formatTime,
+  formatSize,
+  getUrlAndParam,
+  globalJquery,
+} from "../../../js/common.js";
 
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc19hZG1pbiI6ZmFsc2UsImZpcnN0X25hbWUiOiJMdVx1MDBlZHMiLCJsYXN0X25hbWUiOiJHb25cdTAwZTdhbHZlcyIsImV4cCI6MTYzOTgyMjU4OX0.f2Ci-5M5tYA4VWSq94kMc7LQBLlx2mnCbDNBNQyOnO8";
+$(document).ready(function () {
+  globalJquery();
 
-console.log(`${ROOT_URL}/tracks/view`);
+  console.log(`${ROOT_URL}/tracks/view`);
 
-const trackWrapper = $("#view-track");
+  const trackWrapper = $("#view-track");
 
-const [url, param] = getUrlAndParam();
+  const [url, param] = getUrlAndParam();
 
-if (url === `${ROOT_URL}/tracks/view/`) {
-  $.ajax({
-    url: `/exam/music-store-api/tracks/${param}`,
-    type: "GET",
-    headers: { Authorization: "Bearer " + token },
-    success: function (response) {
-      console.log("response", response);
+  if (url === `${ROOT_URL}/tracks/view/`) {
+    $.ajax({
+      url: `/exam/music-store-api/tracks/${param}`,
+      type: "GET",
+      success: function (response) {
+        console.log("response", response);
+        // Inject data into HTML
+        trackWrapper.prepend(getTracksElements(response));
+      },
+    });
 
-      // Inject data into HTML
-      insertTrackData(response);
-    },
-  });
-}
-const insertTrackData = (track) => {
-  trackWrapper.append([
+    $("#add-to-cart").on("click", function (e) {
+      const snackbar = $("#snackbar");
+
+      $.post(CART_SESSION_ROUTE, { id: param }, (res) => {
+        snackbar.text("Track added to cart").addClass("show success");
+      })
+        .fail((err) => {
+          if (err.status === 400) {
+            snackbar.text("Track already added to cart").addClass("show info");
+          }
+          console.log("err", err);
+        })
+        .always(() => {
+          setTimeout(function () {
+            snackbar.removeClass("show");
+          }, 3000);
+        });
+    });
+  }
+});
+
+const getTracksElements = (track) => {
+  return [
     $("<img />", {
       id: "track-album-img",
       src: track["imgUrl"],
@@ -45,5 +69,5 @@ const insertTrackData = (track) => {
       $("<span />", { text: `${formatTime(track["trackTime"])} - ` }),
       $("<span />", { text: `${formatSize(track["trackSize"])}` }),
     ]),
-  ]);
+  ];
 };

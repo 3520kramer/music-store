@@ -21,7 +21,7 @@ if (url === `${ROOT_URL}/albums/view/`) {
 
       const albumSection = createAlbumElements(response["album"]);
       const trackSection = createTrackList(response["tracks"]);
-      // Inject data into HTML
+
       trackWrapper.append([albumSection, trackSection]);
     },
   });
@@ -53,9 +53,9 @@ if (url === `${ROOT_URL}/albums/view/`) {
     tracks.forEach((track) => {
       const id = track["trackId"];
       const listItem = $("<li />", { id: id }).appendTo(trackList);
-      const listAnchor = $("<a />", { href: `tracks/view/${id}` }).appendTo(
-        listItem
-      );
+      const listAnchor = $("<a />", {
+        href: `${ROOT_URL}/tracks/view/${id}`,
+      }).appendTo(listItem);
 
       $("<p />", {
         text: track["trackTitle"],
@@ -63,7 +63,7 @@ if (url === `${ROOT_URL}/albums/view/`) {
       }).appendTo(listAnchor);
 
       $("<img />", {
-        src: ROOT_URL + IMG_NEXT_PATH,
+        src: IMG_NEXT_PATH,
         alt: "Show more",
       }).appendTo(listAnchor);
     });

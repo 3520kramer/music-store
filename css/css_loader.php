@@ -6,12 +6,18 @@ header("Content-type: text/css");
 
 // Array of css files
 $css = array(
-    'header/header.css',
-    'header/searchbar.css',
-    'footer/footer.css',
+    'home/home.css',
     'tracks/tracks.css',
     'tracks/one-track/one-track.css',
-    'albums/one-album/one-album.css'
+    'albums/albums.css',
+    'albums/one-album/one-album.css',
+    'cart/cart.css',
+    'cart/checkout/checkout.css',
+    'cart/checkout/checkout-done/checkout-done.css',
+    'my-account/sign-in/sign-in.css',
+    'common/header/header.css',
+    'common/searchbar/searchbar.css',
+    'common/footer/footer.css',
 
 );
 

@@ -1,8 +1,12 @@
-<?php include_once __DIR__ . '/../../../utilities/constants.php'; ?>
+<?php include_once __DIR__ . '/../../../utilities/constants.php';
+
+include_once __DIR__ . '/../../common/header/header.php';
+echo get_header('Track', 'tracks/one-track/one-track.js');
+?>
 
 <section id="view-track">
-<!-- TEMPLATE -->
-<!-- 
+  <!-- TEMPLATE -->
+  <!-- 
   <img id="track-album" src="https://e-cdns-images.dzcdn.net/images/cover/b5889521dc6324f017e94ece15510571/500x500-000000-80-0-0.jpg" alt=""/>
 
   <h2 id="track-title">Kill 'em all</h2>
@@ -20,12 +24,17 @@
     -
     <span id="track-size">3.4 mb</span>
   </p> -->
+  <div id="snackbar">Some text some message..</div>
+
+  <a href="#" class="button" id="add-to-cart">
+    <p>Add track to cart</p>
+    <img src="<?= ROOT_DIR . '/images/add-to-cart.png' ?>" alt="add track to cart" width="25px" />
+  </a>
+
 </section>
 
-<a href="#" class="add-to-cart-button-mobile">
-  <p>Add track to cart</p>
-  <img src="<?= ROOT_DIR . '/images/add-to-cart.png' ?>" alt="add track to cart" width="25px" />
-</a>
+
+
 <!-- <h3>More by < artist>... click here</h3> -->
 
 <!-- <dl>
