@@ -8,8 +8,9 @@ import {
   CHECKOUT_DONE_ROUTE,
   IMG_NEXT_PATH,
 } from "../../../../js/constants.js";
-import { getUrlAndParam } from "../../../../js/common.js";
+import { getUrlAndParam, globalJquery } from "../../../../js/common.js";
 
+globalJquery();
 console.log(window.location.pathname);
 const [url, param] = getUrlAndParam();
 
@@ -33,7 +34,6 @@ if (url === CHECKOUT_DONE_ROUTE) {
       createCheckoutInvoiceView(res["invoiceInfo"])
         .append(createCheckoutTrackList(res["tracks"]))
         .appendTo(wrapper);
-
     },
     error: function (err) {
       console.log(err.responseText);
@@ -84,26 +84,6 @@ if (url === CHECKOUT_DONE_ROUTE) {
     tracks.forEach((track) => {
       const id = track["trackId"];
       const listItem = $("<li />", { id: id }).appendTo(trackList);
-
-      $("<p />", {
-        text: track["TrackName"],
-        class: "truncate-word",
-      }).appendTo(listItem);
-
-      $("<p />", {
-        text: track["UnitPrice"] + " $",
-        class: "truncate-word",
-      }).appendTo(listItem);
-
-      $("<p />", {
-        text: track["TrackName"],
-        class: "truncate-word",
-      }).appendTo(listItem);
-
-      $("<p />", {
-        text: track["UnitPrice"] + " $",
-        class: "truncate-word",
-      }).appendTo(listItem);
 
       $("<p />", {
         text: track["TrackName"],

@@ -35,7 +35,7 @@ $(document).ready(function () {
     });
   });
 
-  $("#sign-in-section a:nth-of-type(1)").on("click", function (e) {
+  $("#sign-in-button").on("click", function (e) {
     e.preventDefault();
     window.location.href = REGISTER_ROUTE;
   });

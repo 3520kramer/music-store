@@ -62,9 +62,9 @@ function get_header(string $title, string $js_file, bool $is_admin_header = fals
     $nav = <<<HTML
     <nav>
       <ul>
-        <li><a href="$tracks_url">Tracks</a></li>
+        <!-- <li><a href="$tracks_url">Tracks</a></li>
         <li><a href="$artists_url">Artists</a></li>
-        <li><a href="$albums_url">Albums</a></li>
+        <li><a href="$albums_url">Albums</a></li> -->
         <li><a href="$cart_url">View shopping cart</a></li>
         <li><a href="$my_account_url">My account</a></li>
       </ul>

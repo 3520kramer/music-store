@@ -12,7 +12,7 @@ if($is_admin) header('Location: ' . ADMIN_TRACKS_ROUTE);
   <h5>Sign in</h5>
   <form action="#">
     <input type="text" name="username" id="username" />
-    <input type="text" name="password" id="password" />
+    <input type="password" name="password" id="password" />
     <input type="submit" value="Sign in" />
   </form>
 </section>

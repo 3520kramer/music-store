@@ -6,7 +6,11 @@ import {
   CART_SESSION_ROUTE,
   CHECKOUT_DONE_ROUTE,
 } from "../../../js/constants.js";
-import { globalJquery, reduceFormValues } from "../../../js/common.js";
+import {
+  globalJquery,
+  reduceFormValues,
+  displaySnackbar,
+} from "../../../js/common.js";
 
 $(document).ready(async function () {
   globalJquery();
@@ -69,12 +73,17 @@ $(document).ready(async function () {
       headers: HEADERS,
       data: dto,
       success: async function (response) {
-        console.log(response);
         await fetch(CART_SESSION_ROUTE, { method: "DELETE" });
-        //window.location.href = `${CHECKOUT_DONE_ROUTE}${response["invoice_id"]}`;
+        displaySnackbar(
+          "Successfully created order",
+          "success",
+          () =>
+            (window.location.href = `${CHECKOUT_DONE_ROUTE}${response["invoice_id"]}`),
+          1500
+        );
       },
       error: function (error) {
-        console.log(error.responseText);
+        displaySnackbar("Error creating order", "error");
       },
     });
   });

@@ -30,6 +30,10 @@ switch ([$url[1], $url[2] ?? null]) {
   case  ['artists', null]:
     include_once('src/artists/artists.php');
     break;
+  
+  case  ['artists', 'view']:
+    include_once('src/artists/artists.php');
+    break;
 
   case  ['albums', null]:
     include_once('src/albums/albums.php');

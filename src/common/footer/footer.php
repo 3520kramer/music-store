@@ -1,7 +1,7 @@
 <div id="snackbar">Some text some message..</div>
 </main>
 <footer>
-  <h1>footer</h1>
+  <h2>Exam project by Oliver Kramer</h2>
   <p>
     Icons made by
     <a href="https://www.freepik.com" title="Freepik">Freepik</a>

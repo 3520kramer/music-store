@@ -15,7 +15,7 @@ if(!$is_valid) {
 
 <section id="my-account-section">
   <h1>My account</h1>
-  <a href="">
+  <a class="button"href="">
     <p>Sign out</p>
   </a>
 </section>

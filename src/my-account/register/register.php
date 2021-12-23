@@ -47,7 +47,7 @@ echo get_header('Register', 'my-account/register/register.js');
     <label for="Password2">Confirim password</label>
     <input type="text" id="Password2" name="Password2" />
     
-    <input type="submit" value="Confirm order" />
+    <input type="submit" value="Sign up" />
   </form>
   <!-- <div id="snackbar">Some text some message..</div> -->
 
