@@ -1,4 +1,8 @@
-import { ROOT_URL, IMG_NEXT_PATH } from "../../js/constants.js";
+import {
+  ROOT_URL,
+  IMG_NEXT_PATH,
+  SEARCH_ENDPOINT,
+} from "../../js/constants.js";
 import {
   globalJquery,
   createTrackList,
@@ -37,7 +41,7 @@ $(document).ready(function () {
     });
 
     $.ajax({
-      url: `/exam/music-store-api/search?value=${search}`,
+      url: `${SEARCH_ENDPOINT}?value=${search}`,
 
       type: "GET",
       success: function (response) {

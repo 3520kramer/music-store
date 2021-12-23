@@ -40,8 +40,7 @@ export const CUSTOMER_SESSION_ROUTE = ROOT_URL + "/src/session/customer.php";
 
 /* "EXTERNAL" API ENDPOINTS */
 //export const API_ROOT_URL = "/exam/music-store-api";
-export const API_ROOT_URL =
-  "https://music-store-api-webdev.herokuapp.com/genres";
+export const API_ROOT_URL = "https://music-store-api-webdev.herokuapp.com";
 
 export const TRACKS_ENDPOINT = API_ROOT_URL + "/tracks";
 export const SIGN_IN_CUSTOMER_ENDPOINT = API_ROOT_URL + "/auth/customer";
@@ -52,6 +51,7 @@ export const GENRES_ENDPOINT = API_ROOT_URL + "/genres";
 export const MEDIATYPES_ENDPOINT = API_ROOT_URL + "/mediatypes";
 export const ARTISTS_ENDPOINT = API_ROOT_URL + "/artists";
 export const ALBUMS_ENDPOINT = API_ROOT_URL + "/albums";
+export const SEARCH_ENDPOINT = API_ROOT_URL + "/search";
 
 /* IMAGES */
 export const IMG_NEXT_PATH = ROOT_URL + "/images/next.png";
