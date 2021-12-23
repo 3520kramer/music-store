@@ -1,5 +1,6 @@
 /* INTERNAL ROUTES */
-export const ROOT_URL = "/exam/music-store";
+//export const ROOT_URL = "/exam/music-store";
+export const ROOT_URL = "";
 
 export const TRACKS_ROUTE = ROOT_URL + "";
 export const VIEW_TRACK_ROUTE = "";
@@ -27,7 +28,6 @@ export const ADMIN_CREATE_TRACK_ROUTE = ROOT_URL + "/admin/tracks-create";
 export const ADMIN_CREATE_ARTIST_ROUTE = ROOT_URL + "/admin/artists-create";
 export const ADMIN_CREATE_ALBUM_ROUTE = ROOT_URL + "/admin/albums-create";
 
-
 /* INTERNAL ENDPOINT FOR SESSION*/
 export const CREATE_SESSION_ROUTE =
   ROOT_URL + "/src/session/create_session.php";
@@ -39,7 +39,10 @@ export const CART_SESSION_ROUTE = ROOT_URL + "/src/session/cart.php";
 export const CUSTOMER_SESSION_ROUTE = ROOT_URL + "/src/session/customer.php";
 
 /* "EXTERNAL" API ENDPOINTS */
-export const API_ROOT_URL = "/exam/music-store-api";
+//export const API_ROOT_URL = "/exam/music-store-api";
+export const API_ROOT_URL =
+  "https://music-store-api-webdev.herokuapp.com/genres";
+
 export const TRACKS_ENDPOINT = API_ROOT_URL + "/tracks";
 export const SIGN_IN_CUSTOMER_ENDPOINT = API_ROOT_URL + "/auth/customer";
 export const SIGN_IN_ADMIN_ENDPOINT = API_ROOT_URL + "/auth/admin";
