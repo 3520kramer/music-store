@@ -9,6 +9,9 @@
             "email": "3520_kramer@live.dk"
         }
     ],
+    "require": {
+        "php": "8.0.8"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     }
