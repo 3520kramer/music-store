@@ -1,20 +1,28 @@
-import { ROOT_URL, IMG_NEXT_PATH } from "../../js/constants.js";
 import {
+  SIGN_IN_ADMIN_ENDPOINT,
+  CREATE_SESSION_ROUTE,
+  REGISTER_ROUTE,
+  MY_ACCOUNT_ROUTE,
+  IMG_NEXT_PATH,
+  ADMIN_CREATE_ARTIST_ROUTE,
+} from "../../../js/constants.js";
+import {
+  reduceFormValues,
   globalJquery,
-  createTrackList,
   createArtistList,
-  createAlbumList,
-} from "../../js/common.js";
+} from "../../../js/common.js";
 
 $(document).ready(function () {
   globalJquery();
 
-  console.log(`${ROOT_URL}/home`);
-
-  const wrapper = $("#search-result-wrapper");
+  const wrapper = $("#admin-tracks");
 
   const loading = $("#loading");
   const error = $("#error");
+
+  $("#create-artist").click(function (e) {
+    window.location.href = ADMIN_CREATE_ARTIST_ROUTE;
+  });
 
   $(".search-form").submit(function (e) {
     e.preventDefault();
@@ -41,28 +49,22 @@ $(document).ready(function () {
 
       type: "GET",
       success: function (response) {
-        console.log(response);
-
         const sections = [];
 
         if (response["artists"].length > 0) {
-          console.log("artists");
-          sections.push(createArtistList(response["artists"], "artists/view"));
+          sections.push(createArtistList(response["artists"], "artists-view"));
         }
 
-        if (response["albums"].length > 0) {
-          console.log("albums");
-          sections.push(createAlbumList(response["albums"], "albums/view"));
-        }
+        // if (response["albums"].length > 0) {
+        //   sections.push(createAlbumList(response["albums"]));
+        // }
 
-        if (response["tracks"].length > 0) {
-          console.log("tracks");
-          sections.push(createTrackList(response["tracks"], "tracks/view"));
-        }
+        // if (response["tracks"].length > 0) {
+        //   sections.push(createTrackList(response["tracks"], "/artists-view"));
+        // }
 
         // HANDLE EMPTY RESPONSE
         if (sections.length === 0) {
-          console.log("NO RES", response);
           sections.push($("<h3 />", { text: "No results - please try again" }));
         }
         wrapper.append(sections);

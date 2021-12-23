@@ -1,20 +1,16 @@
-import { ROOT_URL, IMG_NEXT_PATH } from "../../js/constants.js";
-import {
-  globalJquery,
-  createTrackList,
-  createArtistList,
-  createAlbumList,
-} from "../../js/common.js";
+import { ADMIN_CREATE_ALBUM_ROUTE } from "../../../js/constants.js";
+import { globalJquery, createAlbumList } from "../../../js/common.js";
 
 $(document).ready(function () {
   globalJquery();
 
-  console.log(`${ROOT_URL}/home`);
-
-  const wrapper = $("#search-result-wrapper");
-
+  const wrapper = $("#admin-albums");
   const loading = $("#loading");
   const error = $("#error");
+
+  $("#create-album").click(function (e) {
+    window.location.href = ADMIN_CREATE_ALBUM_ROUTE;
+  });
 
   $(".search-form").submit(function (e) {
     e.preventDefault();
@@ -45,24 +41,13 @@ $(document).ready(function () {
 
         const sections = [];
 
-        if (response["artists"].length > 0) {
-          console.log("artists");
-          sections.push(createArtistList(response["artists"], "artists/view"));
-        }
-
         if (response["albums"].length > 0) {
           console.log("albums");
-          sections.push(createAlbumList(response["albums"], "albums/view"));
-        }
-
-        if (response["tracks"].length > 0) {
-          console.log("tracks");
-          sections.push(createTrackList(response["tracks"], "tracks/view"));
+          sections.push(createAlbumList(response["albums"], "albums-view"));
         }
 
         // HANDLE EMPTY RESPONSE
         if (sections.length === 0) {
-          console.log("NO RES", response);
           sections.push($("<h3 />", { text: "No results - please try again" }));
         }
         wrapper.append(sections);

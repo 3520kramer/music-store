@@ -1,6 +1,9 @@
 <?php
 include_once 'utilities/url.php';
 include_once 'src/session/authenticate.php';
+include_once 'environment/my-env.php';
+// Initializing the static class with environment variables
+Env::set_env_vars(__DIR__);
 
 session_start();
 
@@ -60,14 +63,41 @@ switch ([$url[1], $url[2] ?? null]) {
     include_once('src/my-account/register/register.php');
     break;
 
+  case  ['admin', null]:
+  case  ['admin', 'sign-in']:
+    include_once('src/admin/sign-in/sign-in.php');
+    break;
+
+  case  ['admin', 'tracks']:
+    include_once('src/admin/tracks/tracks.php');
+    break;
+
+  case  ['admin', 'tracks-view']:
+  case  ['admin', 'tracks-create']:
+    include_once('src/admin/tracks/one-track/one-track.php');
+    break;
+
+  case  ['admin', 'artists']:
+    include_once('src/admin/artists/artists.php');
+    break;
+
+  case  ['admin', 'artists-view']:
+  case  ['admin', 'artists-create']:
+    include_once('src/admin/artists/one-artist/one-artist.php');
+    break;
+
+  case  ['admin', 'albums']:
+    include_once('src/admin/albums/albums.php');
+    break;
+
+  case  ['admin', 'albums-view']:
+  case  ['admin', 'albums-create']:
+    include_once('src/admin/albums/one-album/one-album.php');
+    break;
+
   default:
     echo 'error';
     break;
 }
 
 include_once('src/common/footer/footer.php');
-
-function include_once_if_authorized(string $filepath)
-{
-  // if()
-}

@@ -14,11 +14,14 @@ $css = array(
     'cart/cart.css',
     'cart/checkout/checkout.css',
     'cart/checkout/checkout-done/checkout-done.css',
+    'my-account/my-account.css',
     'my-account/sign-in/sign-in.css',
+    'my-account/register/register.css',
     'common/header/header.css',
     'common/searchbar/searchbar.css',
     'common/footer/footer.css',
-
+    'admin/sign-in/sign-in.css',
+    'admin/tracks/tracks.css',
 );
 
 // Prevent a notice

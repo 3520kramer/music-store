@@ -19,6 +19,15 @@ export const SIGN_IN_ROUTE = ROOT_URL + "/my-account/sign-in";
 export const SIGN_OUT_ROUTE = ROOT_URL + "/my-account/sign-out";
 export const REGISTER_ROUTE = ROOT_URL + "/my-account/register";
 
+export const ADMIN_TRACKS_ROUTE = ROOT_URL + "/admin/tracks";
+export const ADMIN_ARTISTS_ROUTE = ROOT_URL + "/admin/artists";
+export const ADMIN_ALBUMS_ROUTE = ROOT_URL + "/admin/albums";
+
+export const ADMIN_CREATE_TRACK_ROUTE = ROOT_URL + "/admin/tracks-create";
+export const ADMIN_CREATE_ARTIST_ROUTE = ROOT_URL + "/admin/artists-create";
+export const ADMIN_CREATE_ALBUM_ROUTE = ROOT_URL + "/admin/albums-create";
+
+
 /* INTERNAL ENDPOINT FOR SESSION*/
 export const CREATE_SESSION_ROUTE =
   ROOT_URL + "/src/session/create_session.php";
@@ -36,7 +45,10 @@ export const SIGN_IN_CUSTOMER_ENDPOINT = API_ROOT_URL + "/auth/customer";
 export const SIGN_IN_ADMIN_ENDPOINT = API_ROOT_URL + "/auth/admin";
 export const INVOICES_ENDPOINT = API_ROOT_URL + "/invoices";
 export const CUSTOMER_ENDPOINT = API_ROOT_URL + "/customers";
-
+export const GENRES_ENDPOINT = API_ROOT_URL + "/genres";
+export const MEDIATYPES_ENDPOINT = API_ROOT_URL + "/mediatypes";
+export const ARTISTS_ENDPOINT = API_ROOT_URL + "/artists";
+export const ALBUMS_ENDPOINT = API_ROOT_URL + "/albums";
 
 /* IMAGES */
 export const IMG_NEXT_PATH = ROOT_URL + "/images/next.png";

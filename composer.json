@@ -1,0 +1,15 @@
+{
+    "name": "kramer/music-store-webdev",
+    "description": "Exam project",
+    "type": "project",
+    "license": "GPL 3",
+    "authors": [
+        {
+            "name": "Oliver Kramer",
+            "email": "3520_kramer@live.dk"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

@@ -65,9 +65,18 @@ function validate_session_jwt(): mixed
 }
 
 // split the jwt and decode payload
-function get_jwt_payload(string $jwt)
+function get_jwt_payload(string $jwt = null)
 {
+  $jwt = $jwt ?? $_SESSION['jwt'] ?? null;
+  if (!$jwt) return false;
+
   $token_parts = explode('.', $jwt);
   $payload = base64_decode($token_parts[1]);
   return json_decode($payload, true);
+}
+
+function is_admin(): bool
+{
+  $jwt = get_jwt_payload();
+  return $jwt['is_admin'] ?? false;
 }

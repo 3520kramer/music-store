@@ -58,21 +58,34 @@ main{
   border: 1px solid #bbb;
 }
 
+.admin-one-element-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 /* Form */
 .form-grid{
   display: grid;
   margin: 1rem 0;
+  overflow: hidden;
 }
 
-.form-grid label, input[type=text], input[type=select]{
+select,
+option.selected {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.form-grid label, .form-grid input, select{
+  max-width: 100%;
   margin-bottom: 0.25rem;
 }
 
 .form-grid input[type=submit]{
   margin: 1rem 0;
 }
-
 
 @media (min-width: 480px) {
   body {
@@ -83,7 +96,9 @@ main{
   }
   .form-grid{
     grid-template-rows: auto;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: auto 1fr;
+    column-gap: 2rem;
+    justify-items: stretch;
   }
 
   .form-grid input[type=submit]{
